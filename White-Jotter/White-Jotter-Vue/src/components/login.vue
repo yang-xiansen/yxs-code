@@ -11,8 +11,8 @@
 <script>
 
   export default {
-    name: 'Login',
-    data () {
+    name: 'login',
+    data() {
       return {
         loginForm: {
           username: '',
@@ -22,7 +22,7 @@
       }
     },
     methods: {
-      login () {
+      login() {
         this.$axios
           .post('/login', {
             username: this.loginForm.username,
