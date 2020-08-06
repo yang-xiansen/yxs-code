@@ -7,6 +7,8 @@ import login from '@/components/login'
 Vue.use(Router)
 
 export default new Router({
+  //路由启用history模式 不使用hash（#）
+  mode: 'history',
   routes: [
     // 下面都是固定的写法
     {
