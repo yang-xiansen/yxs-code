@@ -41,7 +41,11 @@
           })
           .then(successResponse => {
             if (successResponse.data.code === 200) {
-              this.$router.replace({path: '/index'})
+              //触发状态管理器中的login方法 将loginForm对象传递过去
+              // var _this = this
+              this.$store.commit("login", this.loginForm)
+              var path = this.$route.query.redirect
+              this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
             }
           })
           .catch(failResponse => {

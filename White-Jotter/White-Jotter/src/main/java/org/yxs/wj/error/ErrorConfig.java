@@ -6,6 +6,11 @@ import org.springframework.boot.web.server.ErrorPageRegistry;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+/**
+* @Description: 访问404跳转
+* @Author: yang-xiansen
+* @Date: 2020/08/07 8:33
+*/
 @Component
 public class ErrorConfig implements ErrorPageRegistrar {
 
