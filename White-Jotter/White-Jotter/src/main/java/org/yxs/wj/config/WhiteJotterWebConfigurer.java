@@ -2,6 +2,7 @@ package org.yxs.wj.config;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.yxs.wj.interceptor.LoginInterceptor;
@@ -32,5 +33,21 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         //除了不拦截index.html 拦截所有
         registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html");
+    }
+
+    /**
+     * @param registry
+     * @Description: 跨域处理 也可以使用@CrossOrigin注解来解决跨域问题
+     * @return: void
+     * @Author: yang-xiansen
+     * @Date: 2020/08/07 21:42
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        //所有请求都允许跨域
+        registry.addMapping("/**")
+            .allowedOrigins("*")
+            .allowedMethods("*")
+            .allowedHeaders("*");
     }
 }
