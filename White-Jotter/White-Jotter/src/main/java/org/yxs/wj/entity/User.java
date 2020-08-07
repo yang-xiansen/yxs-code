@@ -12,15 +12,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
-@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+@JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
-    String username;
-    String password;
+    private int id;
+    private String username;
+    private String password;
 
     public int getId() {
         return id;

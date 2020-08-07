@@ -1,12 +1,12 @@
 package org.yxs.wj.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -20,10 +20,11 @@ import javax.persistence.Table;
 @Table(name = "book")
 @JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "cid")
@@ -32,32 +33,32 @@ public class Book {
     /**
      * 封面
      */
-    String cover;
+    private String cover;
 
     /**
      * 标题
      */
-    String title;
+    private String title;
 
     /**
      * 作者
      */
-    String author;
+    private String author;
 
     /**
      * 出版日期
      */
-    String date;
+    private String date;
 
     /**
      * 出版社
      */
-    String press;
+    private String press;
 
     /**
      * 摘要
      */
-    String abs;
+    private String abs;
 
     public Category getCategory() {
         return category;
