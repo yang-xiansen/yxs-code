@@ -4,6 +4,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.yxs.wj.interceptor.LoginInterceptor;
 
@@ -50,4 +51,17 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
             .allowedMethods("*")
             .allowedHeaders("*");
     }
+
+    /**
+     * @param registry
+     * @Description: 将url访问路径 与 本地存放文件的地址对应起来
+     * @return: void
+     * @Author: yang-xiansen
+     * @Date: 2020/08/07 22:03
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "d:/workspace/img/");
+    }
+
 }

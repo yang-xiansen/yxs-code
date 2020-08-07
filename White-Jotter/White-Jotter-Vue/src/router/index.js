@@ -19,6 +19,16 @@ export default new Router({
       component: login
     },
     {
+      path: '/',
+      name: 'index',
+      redirect: '/index',
+      component: appIndex,
+      meta: {
+        requireAuth: true
+      }
+    },
+
+    {
       path: '/home',
       name: 'home',
       component: home,

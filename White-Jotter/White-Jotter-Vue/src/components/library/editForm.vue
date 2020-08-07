@@ -1,6 +1,6 @@
 <template>
   <div>
-    <i class="el-icon-circle-plus-outline"  @click="dialogFormVisible = true"></i>
+    <i class="el-icon-circle-plus-outline" @click="dialogFormVisible = true"></i>
     <el-dialog
       title="添加/修改图书"
       :visible.sync="dialogFormVisible"
@@ -20,6 +20,7 @@
         </el-form-item>
         <el-form-item label="封面" :label-width="formLabelWidth" prop="cover">
           <el-input v-model="form.cover" autocomplete="off" placeholder="图片 URL"></el-input>
+          <img-upload @onUpload="uploadImg" ref="imgUpload"></img-upload>
         </el-form-item>
         <el-form-item label="简介" :label-width="formLabelWidth" prop="abs">
           <el-input type="textarea" v-model="form.abs" autocomplete="off"></el-input>
@@ -47,9 +48,11 @@
 </template>
 
 <script>
+  import imgUpload from './imgUpload'
   export default {
     name: 'editForm',
-    data () {
+    components: {imgUpload},
+    data() {
       return {
         dialogFormVisible: false,
         form: {
@@ -69,7 +72,7 @@
       }
     },
     methods: {
-      clear () {
+      clear() {
         this.form = {
           id: '',
           title: '',
@@ -81,7 +84,7 @@
           category: ''
         }
       },
-      onSubmit () {
+      onSubmit() {
         this.$axios
           .post('/books', {
             id: this.form.id,
@@ -98,6 +101,9 @@
             this.$emit('onSubmit')
           }
         })
+      },
+      uploadImg() {
+        this.form.cover = this.$refs.imgUpload.url
       }
     }
   }
