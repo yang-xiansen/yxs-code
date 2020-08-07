@@ -38,13 +38,17 @@
 <script>
   export default {
     name: 'sideMenu',
-
+    data () {
+      return {
+        cid: ''
+      }
+    },
     methods: {
-      handleSelect() {
-
+      handleSelect (key, keyPath) {
+        this.cid = key
+        this.$emit('indexSelect')
       }
     }
-
   }
 </script>
 
