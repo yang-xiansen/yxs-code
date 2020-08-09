@@ -35,9 +35,9 @@
             <el-option label="科技" value="6"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item prop="id" style="height: 0">
-          <el-input type="hidden" v-model="form.id" autocomplete="off"></el-input>
-        </el-form-item>
+<!--        <el-form-item prop="id" style="height: 0">-->
+<!--          <el-input type="hidden" v-model="form.id" autocomplete="off"></el-input>-->
+<!--        </el-form-item>-->
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
