@@ -19,6 +19,11 @@ export default new Router({
       component: login
     },
     {
+      path: '/register',
+      name: 'register',
+      component: () => import('../components/register')
+    },
+    {
       path: '/',
       name: 'index',
       redirect: '/index',

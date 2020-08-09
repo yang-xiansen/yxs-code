@@ -22,6 +22,16 @@ public class User {
     private String username;
     private String password;
 
+    private String salt;
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     public int getId() {
         return id;
     }

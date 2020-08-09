@@ -51,7 +51,7 @@ public class LibraryController {
     @CrossOrigin
     @PostMapping("api/covers")
     public String coversUpload(MultipartFile file) throws Exception {
-        String folder = "D:/workspace/img";
+        String folder = "F:/workspace/img";
         File imageFolder = new File(folder);
         File f = new File(imageFolder, StringUtils.getRandomString(6) + file.getOriginalFilename()
             .substring(file.getOriginalFilename().length() - 4));
@@ -60,7 +60,7 @@ public class LibraryController {
         try {
             //写入
             file.transferTo(f);
-            String imgURL = "http://localhost:8443/api/file/" + f.getName();
+            String imgURL = "http://localhost:9090/api/file/" + f.getName();
             return imgURL;
         } catch (IOException e) {
             e.printStackTrace();
