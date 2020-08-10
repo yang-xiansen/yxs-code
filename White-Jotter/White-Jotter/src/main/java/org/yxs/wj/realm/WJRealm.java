@@ -1,5 +1,6 @@
 package org.yxs.wj.realm;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -11,7 +12,10 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.yxs.wj.entity.User;
+import org.yxs.wj.exception.WJException;
 import org.yxs.wj.service.UserService;
+
+import java.util.Objects;
 
 public class WJRealm extends AuthorizingRealm {
 
@@ -42,6 +46,9 @@ public class WJRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String userName = authenticationToken.getPrincipal().toString();
         User user = userService.getByName(userName);
+        if (Objects.isNull(user)) {
+            throw new WJException("用户不存在");
+        }
         String password = user.getPassword();
         String salt = user.getSalt();
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userName, password, ByteSource.Util.bytes(salt), getName());
