@@ -39,6 +39,7 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
         registry.addInterceptor(loginInterceptor()).addPathPatterns("/**")
             .excludePathPatterns("/index.html")
             .excludePathPatterns("/api/login")
+            .excludePathPatterns("/api/register")
             .excludePathPatterns("/api/logout");
     }
 
