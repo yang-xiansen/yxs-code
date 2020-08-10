@@ -8,9 +8,13 @@ export default new Vuex.Store({
   state: {
     user: {
       username: window.localStorage.getItem('user' || '[]') == null ? '' : JSON.parse(window.localStorage.getItem('user' || '[]')).username
-    }
+    },
+    adminMenus: []
   },
   mutations: {
+    initAdminMenu (state, menus) {
+      state.adminMenus = menus
+    },
     //登陆获取用户信息
     login(state, user) {
       state.user = user
@@ -21,6 +25,7 @@ export default new Vuex.Store({
     logout (state) {
       state.user = []
       window.localStorage.removeItem('user')
+      state.adminMenus = []
     }
 
   }

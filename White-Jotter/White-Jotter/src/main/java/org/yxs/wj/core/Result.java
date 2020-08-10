@@ -1,15 +1,19 @@
 package org.yxs.wj.core;
 
-public class Result {
+public class Result<T> {
     //响应码
     private int code;
 
     private String message;
 
 
-    private Object result;
+    private T result;
 
-    public Result(int code, String message, Object result) {
+    public Result(int code, String message, T result) {
+        this.code = code;
+        this.message = message;
+        this.result = result;
+
 
     }
 
@@ -33,11 +37,11 @@ public class Result {
         this.message = message;
     }
 
-    public Object getResult() {
+    public T getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(T result) {
         this.result = result;
     }
 }

@@ -1,8 +1,6 @@
 package org.yxs.wj.exception;
 
 
-import org.apache.shiro.authz.UnauthorizedException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
