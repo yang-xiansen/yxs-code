@@ -1,4 +1,4 @@
-package org.yxs.wj.entity;
+package org.yxs.wj.domain.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -17,6 +17,7 @@ import javax.persistence.Table;
  * @Date: 2020/08/09 20:50
  * @Description: 菜单与角色关联
  */
+@Data
 @Entity
 @Table(name = "role_menu")
 @ToString
@@ -28,36 +29,12 @@ public class RoleMenu {
     private int id;
 
     /**
-     * Role id.
+     * 角色id
      */
     private int roleId;
 
     /**
-     * Menu id.
+     * 菜单id
      */
     private int menuId;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
-
-    public int getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
-    }
 }

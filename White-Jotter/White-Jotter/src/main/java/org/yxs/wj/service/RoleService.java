@@ -1,20 +1,21 @@
 package org.yxs.wj.service;
 
-;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.yxs.wj.dao.RoleDAO;
-import org.yxs.wj.entity.Role;
-import org.yxs.wj.entity.UserRole;
+import org.yxs.wj.domain.entity.Role;
+import org.yxs.wj.domain.entity.UserRole;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author Evan
- * @date 2019/11
- */
+* @Description:
+* @Author: yang-xiansen
+* @Date: 2020/08/11 9:27
+*/
 @Service
 public class RoleService {
     @Autowired
@@ -45,24 +46,26 @@ public class RoleService {
         return roleDAO.findAll();
     }
 
-
+    @Transactional
     public void addOrUpdate(Role role) {
         roleDAO.save(role);
     }
 
     public List<Role> listRolesByUser(String username) {
-        int uid = userService.getByName(username).getId();
+        int uid = userService.findByUsername(username).getId();
         List<Integer> rids = userRoleService.listAllByUid(uid)
             .stream().map(UserRole::getRoleId).collect(Collectors.toList());
         return roleDAO.findAllById(rids);
     }
 
+    @Transactional
     public Role updateRoleStatus(Role role) {
         Role roleInDB = roleDAO.findById(role.getId());
         roleInDB.setEnabled(role.isEnabled());
         return roleDAO.save(roleInDB);
     }
 
+    @Transactional
     public void editRole(@RequestBody Role role) {
         roleDAO.save(role);
 //        adminRolePermissionService.savePermChanges(role.getId(), role.getPerms());

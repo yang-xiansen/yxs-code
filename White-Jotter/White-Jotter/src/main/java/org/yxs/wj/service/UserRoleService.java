@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.yxs.wj.dao.UserRoleDAO;
-import org.yxs.wj.entity.Role;
-import org.yxs.wj.entity.UserRole;
+import org.yxs.wj.domain.entity.Role;
+import org.yxs.wj.domain.entity.UserRole;
 
 import java.util.ArrayList;
 import java.util.List;

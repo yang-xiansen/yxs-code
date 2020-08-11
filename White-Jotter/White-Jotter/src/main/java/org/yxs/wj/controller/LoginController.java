@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.HtmlUtils;
 import org.yxs.wj.core.Result;
 import org.yxs.wj.core.ResultFactory;
-import org.yxs.wj.entity.User;
+import org.yxs.wj.domain.entity.User;
 import org.yxs.wj.service.UserService;
 
 @RestController

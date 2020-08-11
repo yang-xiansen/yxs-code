@@ -1,7 +1,7 @@
 package org.yxs.wj.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.yxs.wj.entity.Role;
+import org.yxs.wj.domain.entity.Role;
 
 
 public interface RoleDAO extends JpaRepository<Role, Integer> {

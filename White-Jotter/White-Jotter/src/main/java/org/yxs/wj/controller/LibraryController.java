@@ -4,7 +4,7 @@ package org.yxs.wj.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.yxs.wj.entity.Book;
+import org.yxs.wj.domain.entity.Book;
 import org.yxs.wj.service.BookService;
 import org.yxs.wj.utils.StringUtils;
 

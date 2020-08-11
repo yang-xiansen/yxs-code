@@ -1,6 +1,7 @@
-package org.yxs.wj.entity;
+package org.yxs.wj.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
@@ -18,6 +19,7 @@ import javax.persistence.Table;
  * @Author: yang-xiansen
  * @Date: 2020/08/07 13:47
  */
+@Data
 @Entity
 @Table(name = "book")
 @JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
@@ -62,70 +64,6 @@ public class Book {
      * 摘要
      */
     private String abs;
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getPress() {
-        return press;
-    }
-
-    public void setPress(String press) {
-        this.press = press;
-    }
-
-    public String getAbs() {
-        return abs;
-    }
-
-    public void setAbs(String abs) {
-        this.abs = abs;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCover() {
-        return cover;
-    }
-
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 }
 
 

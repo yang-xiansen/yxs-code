@@ -1,4 +1,4 @@
-package org.yxs.wj.entity;
+package org.yxs.wj.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -16,6 +16,7 @@ import javax.persistence.Table;
  * @Date: 2020/08/09 20:50
  * @Description: 用户与角色关联
  */
+@Data
 @Entity
 @Table(name = "user_role")
 @ToString
@@ -27,36 +28,12 @@ public class UserRole {
     private int id;
 
     /**
-     * User id.
+     * 用户id
      */
     private int userId;
 
     /**
-     * Role id.
+     * 角色id
      */
     private int roleId;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 }

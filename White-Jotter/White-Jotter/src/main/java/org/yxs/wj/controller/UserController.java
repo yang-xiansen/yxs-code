@@ -1,25 +1,51 @@
 package org.yxs.wj.controller;
 
-import org.apache.shiro.crypto.SecureRandomNumberGenerator;
-import org.apache.shiro.crypto.hash.SimpleHash;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.HtmlUtils;
 import org.yxs.wj.core.Result;
 import org.yxs.wj.core.ResultFactory;
-import org.yxs.wj.entity.User;
+import org.yxs.wj.domain.entity.User;
+import org.yxs.wj.service.UserRoleService;
 import org.yxs.wj.service.UserService;
 
+import javax.validation.Valid;
+
+/**
+ * @Description: 用户controller
+ * @Author: yang-xiansen
+ * @Date: 2020/08/11 12:55
+ */
 @RestController
 public class UserController {
+    @Autowired
+   private UserService userService;
+    @Autowired
+   private UserRoleService userRoleService;
 
-    private UserService userService;
+    @GetMapping("/api/admin/user")
+    public Result listUsers() {
+        return ResultFactory.buildSuccessResult(userService.list());
+    }
 
+    @PutMapping("/api/admin/user/status")
+    public Result updateUserStatus(@RequestBody @Valid User requestUser) {
+        userService.updateUserStatus(requestUser);
+        return ResultFactory.buildSuccessResult("用户状态更新成功");
+    }
 
+    @PutMapping("/api/admin/user/password")
+    public Result resetPassword(@RequestBody @Valid User requestUser) {
+        userService.resetPassword(requestUser);
+        return ResultFactory.buildSuccessResult("重置密码成功");
+    }
 
-
-
+    @PutMapping("/api/admin/user")
+    public Result editUser(@RequestBody @Valid User requestUser) {
+        userService.editUser(requestUser);
+        return ResultFactory.buildSuccessResult("修改用户信息成功");
+    }
 }

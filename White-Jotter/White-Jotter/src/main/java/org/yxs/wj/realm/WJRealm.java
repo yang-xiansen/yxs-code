@@ -1,6 +1,5 @@
 package org.yxs.wj.realm;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -11,7 +10,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.yxs.wj.entity.User;
+import org.yxs.wj.domain.entity.User;
 import org.yxs.wj.exception.WJException;
 import org.yxs.wj.service.UserService;
 

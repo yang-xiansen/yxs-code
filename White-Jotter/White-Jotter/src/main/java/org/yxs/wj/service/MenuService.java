@@ -5,12 +5,9 @@ import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yxs.wj.dao.MenuDAO;
-import org.yxs.wj.entity.Menu;
-import org.yxs.wj.entity.RoleMenu;
-import org.yxs.wj.entity.User;
-import org.yxs.wj.entity.UserRole;
-
-import java.util.Iterator;
+import org.yxs.wj.domain.entity.Menu;
+import org.yxs.wj.domain.entity.RoleMenu;
+import org.yxs.wj.domain.entity.UserRole;
 import java.util.List;
 import java.util.stream.Collectors;
 

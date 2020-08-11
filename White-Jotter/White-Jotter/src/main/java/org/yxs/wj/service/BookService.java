@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.yxs.wj.dao.BookDao;
-import org.yxs.wj.entity.Book;
-import org.yxs.wj.entity.Category;
+import org.yxs.wj.domain.entity.Book;
+import org.yxs.wj.domain.entity.Category;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.yxs.wj.entity;
+package org.yxs.wj.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -22,6 +22,7 @@ import java.util.List;
  * @Date: 2020/08/09 20:50
  * @Description: 角色
  */
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -51,35 +52,15 @@ public class Role {
      */
     private boolean enabled;
 
-    public int getId() {
-        return id;
-    }
+    /**
+     * 角色对应的权限
+     */
+    @Transient
+    private List<Permission> perms;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNameZh() {
-        return nameZh;
-    }
-
-    public void setNameZh(String nameZh) {
-        this.nameZh = nameZh;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+    /**
+     * 角色对应的菜单
+     */
+    @Transient
+    private List<Menu> menus;
 }

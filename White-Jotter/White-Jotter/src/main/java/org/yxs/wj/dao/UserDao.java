@@ -1,7 +1,7 @@
 package org.yxs.wj.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.yxs.wj.entity.User;
+import org.yxs.wj.domain.entity.User;
 
 public interface UserDao extends JpaRepository<User, Integer> {
 

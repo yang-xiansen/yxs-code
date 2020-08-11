@@ -1,6 +1,7 @@
-package org.yxs.wj.entity;
+package org.yxs.wj.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Date: 2020/08/09 17:13
  * @Description: 菜单
  */
+@Data
 @Entity
 @Table(name = "menu")
 @JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
@@ -62,70 +64,6 @@ public class Menu {
     //数据库中不存在对应字段的属性，需要用 @Transient 注记标注出来
     @Transient
     private List<Menu> children;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNameZh() {
-        return nameZh;
-    }
-
-    public void setNameZh(String nameZh) {
-        this.nameZh = nameZh;
-    }
-
-    public String getIconCls() {
-        return iconCls;
-    }
-
-    public void setIconCls(String iconCls) {
-        this.iconCls = iconCls;
-    }
-
-    public String getComponent() {
-        return component;
-    }
-
-    public void setComponent(String component) {
-        this.component = component;
-    }
-
-    public int getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(int parentId) {
-        this.parentId = parentId;
-    }
-
-    public List<Menu> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Menu> children) {
-        this.children = children;
-    }
 }
 
 

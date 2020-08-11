@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.yxs.wj.dao.RoleMenuDAO;
-import org.yxs.wj.entity.RoleMenu;
+import org.yxs.wj.domain.entity.RoleMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,7 @@ public class RoleMenuService {
         return roleMenuDAO.findAllByRoleId(roleIds);
     }
 
+    @Transactional
     public void save(RoleMenu rm) {
         roleMenuDAO.save(rm);
     }
