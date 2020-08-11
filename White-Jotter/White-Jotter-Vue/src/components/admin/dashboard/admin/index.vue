@@ -48,7 +48,7 @@ import PieChart from './components/PieChart'
 import LineChart from './components/LineChart'
 import BarChart from './components/BarChart'
 import TransactionTable from './components/TransactionTable'
-import TodoList from './components/TodoList'
+import TodoList from './components/TodoList/index'
 import BoxCard from './components/BoxCard'
 
 const lineChartData = {

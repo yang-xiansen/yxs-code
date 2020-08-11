@@ -1,12 +1,13 @@
 package org.yxs.wj.utils;
 
-import com.gm.wj.exception.BeanUtilsException;
+
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
+import org.yxs.wj.exception.WJException;
 
 import java.beans.PropertyDescriptor;
 import java.util.Collection;
@@ -34,7 +35,7 @@ public class BeanUtils {
      * @param targetClass target class must not be null
      * @param <T>         target class type
      * @return instance with specified type copying from source data; or null if source data is null
-     * @throws BeanUtilsException if newing target instance failed or copying failed
+     * @throws WJException if newing target instance failed or copying failed
      */
     @Nullable
     public static <T> T transformFrom(@Nullable Object source, @NonNull Class<T> targetClass) {
@@ -53,7 +54,7 @@ public class BeanUtils {
             // Return the target instance
             return targetInstance;
         } catch (Exception e) {
-            throw new BeanUtilsException("Failed to new " + targetClass.getName() + " instance or copy properties", e);
+            throw new WJException("Failed to new " + targetClass.getName() + " instance or copy properties,"+ e);
         }
     }
 
@@ -64,7 +65,7 @@ public class BeanUtils {
      * @param targetClass target class must not be null
      * @param <T>         target class type
      * @return target collection transforming from source data collection.
-     * @throws BeanUtilsException if newing target instance failed or copying failed
+     * @throws WJException if newing target instance failed or copying failed
      */
     @NonNull
     public static <T> List<T> transformFromInBatch(Collection<?> sources, @NonNull Class<T> targetClass) {
@@ -83,7 +84,7 @@ public class BeanUtils {
      *
      * @param source source data must not be null
      * @param target target data must not be null
-     * @throws BeanUtilsException if copying failed
+     * @throws WJException if copying failed
      */
     public static void updateProperties(@NonNull Object source, @NonNull Object target) {
         Assert.notNull(source, "source object must not be null");
@@ -93,7 +94,7 @@ public class BeanUtils {
         try {
             org.springframework.beans.BeanUtils.copyProperties(source, target, getNullPropertyNames(source));
         } catch (BeansException e) {
-            throw new BeanUtilsException("Failed to copy properties", e);
+            throw new WJException("Failed to copy properties:"+ e);
         }
     }
 

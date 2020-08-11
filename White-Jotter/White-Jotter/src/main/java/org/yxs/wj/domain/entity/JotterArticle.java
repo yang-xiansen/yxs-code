@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
@@ -21,7 +22,7 @@ import java.sql.Date;
 */
 @Data
 @Entity
-//@Table(name = "jotter_article")
+@Table(name = "jotter_article")
 @ToString
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public class JotterArticle {

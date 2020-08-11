@@ -12,14 +12,19 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.yxs.wj.domain.entity.User;
 import org.yxs.wj.exception.WJException;
+import org.yxs.wj.service.PermissionService;
 import org.yxs.wj.service.UserService;
 
 import java.util.Objects;
+import java.util.Set;
 
 public class WJRealm extends AuthorizingRealm {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PermissionService permissionService;
 
     /**
      * @param principalCollection
@@ -30,9 +35,16 @@ public class WJRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        return info;
+        // 获取当前用户的所有权限
+        String username = principalCollection.getPrimaryPrincipal().toString();
+        Set<String> permissions = permissionService.listPermissionURLsByUser(username);
+
+        // 将权限放入授权信息中
+        SimpleAuthorizationInfo s = new SimpleAuthorizationInfo();
+        s.setStringPermissions(permissions);
+        return s;
     }
+
 
     /**
      * @param authenticationToken
@@ -44,7 +56,7 @@ public class WJRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String userName = authenticationToken.getPrincipal().toString();
-        User user = userService.getByName(userName);
+        User user = userService.findByUsername(userName);
         if (Objects.isNull(user)) {
             throw new WJException("用户不存在");
         }

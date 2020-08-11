@@ -20,10 +20,10 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
      * @Author: yang-xiansen
      * @Date: 2020/08/07 8:40
      */
-    @Bean
-    public LoginInterceptor loginInterceptor() {
-        return new LoginInterceptor();
-    }
+//    @Bean
+//    public LoginInterceptor loginInterceptor() {
+//        return new LoginInterceptor();
+//    }
 
     /**
      * @param registry
@@ -32,15 +32,16 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
      * @Author: yang-xiansen
      * @Date: 2020/08/07 8:41
      */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        //除了不拦截index.html 拦截所有
-        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**")
-            .excludePathPatterns("/index.html")
-            .excludePathPatterns("/api/login")
-            .excludePathPatterns("/api/register")
-            .excludePathPatterns("/api/logout");
-    }
+    //  Shiro 的权限机制要靠它自身提供的过滤器实现  所以注释自定义拦截器
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        //除了不拦截index.html 拦截所有
+//        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**")
+//            .excludePathPatterns("/index.html")
+//            .excludePathPatterns("/api/login")
+//            .excludePathPatterns("/api/register")
+//            .excludePathPatterns("/api/logout");
+//    }
 
     /**
      * @param registry

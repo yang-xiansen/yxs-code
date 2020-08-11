@@ -38,7 +38,7 @@ public class PermissionService {
 
     /**
      * @param requestAPI
-     * @Description: 判断用户请求接口的是否在权限列表中
+     * @Description: 判断用户请求接口的是否在权限表中 如果不在则直接放行了！
      * @return: boolean
      * @Author: yang-xiansen
      * @Date: 2020/08/11 12:53

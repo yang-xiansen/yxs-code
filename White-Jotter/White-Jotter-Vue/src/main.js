@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import mavonEditor from 'mavon-editor'
 import 'element-ui/lib/theme-chalk/index.css'
 //增加钩子函数 判断拦截
 import store from './store'
@@ -70,6 +71,7 @@ router.beforeEach((to, from, next) => {
 // })
 
 Vue.use(ElementUI)
+Vue.use(mavonEditor)
 
 //根据用户初始化菜单
 const initAdminMenu = (router, store) => {

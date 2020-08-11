@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.yxs.wj.dao.MenuDAO;
 import org.yxs.wj.domain.entity.Menu;
 import org.yxs.wj.domain.entity.RoleMenu;
+import org.yxs.wj.domain.entity.User;
 import org.yxs.wj.domain.entity.UserRole;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,7 +36,7 @@ public class MenuService {
     public List<Menu> getMenusByCurrentUser() {
         // Get current user in DB.
         String username = SecurityUtils.getSubject().getPrincipal().toString();
-        User user = userService.getByName(username);
+        User user = userService.findByUsername(username);
 
         // 获取当前用户的角色
         List<Integer> rids = userRoleService.listAllByUid(user.getId())
