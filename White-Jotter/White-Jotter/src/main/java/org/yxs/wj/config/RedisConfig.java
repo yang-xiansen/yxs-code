@@ -20,15 +20,19 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.time.Duration;
 
 /**
- *  @author: yang-xiansen
- *  @Date: 2020/08/11 22:06
- *  @Description:
+ * @author: yang-xiansen
+ * @Date: 2020/08/11 22:06
+ * @Description:
  */
 @EnableCaching
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
-    public static final String REDIS_KEY_DATABASE="wj";
 
+    /**
+     * @Description: 配置redisTemplate
+     * @Author: yang-xiansen
+     * @Date: 2020/08/12 9:09
+     */
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisSerializer<Object> serializer = redisSerializer();
@@ -42,6 +46,11 @@ public class RedisConfig extends CachingConfigurerSupport {
         return redisTemplate;
     }
 
+    /**
+     * @Description: 配置序列化器
+     * @Author: yang-xiansen
+     * @Date: 2020/08/12 9:09
+     */
     @Bean
     public RedisSerializer<Object> redisSerializer() {
         //创建JSON序列化器
@@ -58,7 +67,7 @@ public class RedisConfig extends CachingConfigurerSupport {
         RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory);
         //设置Redis缓存有效期为1天
         RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer())).entryTtl(Duration.ofDays(1));
+            .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer())).entryTtl(Duration.ofDays(1));
         return new RedisCacheManager(redisCacheWriter, redisCacheConfiguration);
     }
 }

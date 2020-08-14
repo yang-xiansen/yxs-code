@@ -5,10 +5,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.yxs.wj.interceptor.LoginInterceptor;
+//import org.yxs.wj.interceptor.LoginInterceptor;
 
 @SpringBootConfiguration
 public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
@@ -50,15 +51,15 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
      * @Author: yang-xiansen
      * @Date: 2020/08/07 21:42
      */
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry) {
-//        //所有请求都允许跨域
-//        registry.addMapping("/**")
-//            .allowCredentials(true)  //允许跨域使用cookie
-//            .allowedOrigins("*")  //跨域的主机+端口 为了安全 建议不使用*
-//            .allowedMethods("*") //跨域的方法
-//            .allowedHeaders("*"); //跨域的请求头
-//    }
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        //所有请求都允许跨域
+        registry.addMapping("/**")
+            .allowCredentials(true)  //允许跨域使用cookie
+            .allowedOrigins("*")  //跨域的主机+端口 为了安全 建议不使用*
+            .allowedMethods("*") //跨域的方法
+            .allowedHeaders("*"); //跨域的请求头
+    }
 
 
     /**
@@ -68,23 +69,23 @@ public class WhiteJotterWebConfigurer implements WebMvcConfigurer {
      * @Author: yang-xiansen
      * @Date: 2020/08/09 11:57
      */
-    private CorsConfiguration corsConfig() {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        //请求常用的三种配置，*代表允许所有，当时你也可以自定义属性（比如header只能带什么，只能是post方式等等）
-        corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedHeader("*");
-        corsConfiguration.addAllowedMethod("*");
-        corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setMaxAge(3600L);
-        return corsConfiguration;
-    }
-
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfig());
-        return new CorsFilter(source);
-    }
+//    private CorsConfiguration corsConfig() {
+//        CorsConfiguration corsConfiguration = new CorsConfiguration();
+//        //请求常用的三种配置，*代表允许所有，当时你也可以自定义属性（比如header只能带什么，只能是post方式等等）
+//        corsConfiguration.addAllowedOrigin("*");
+//        corsConfiguration.addAllowedHeader("*");
+//        corsConfiguration.addAllowedMethod("*");
+//        corsConfiguration.setAllowCredentials(true);
+//        corsConfiguration.setMaxAge(3600L);
+//        return corsConfiguration;
+//    }
+//
+//    @Bean
+//    public CorsFilter corsFilter() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", corsConfig());
+//        return new CorsFilter(source);
+//    }
 
     /**
      * @param registry

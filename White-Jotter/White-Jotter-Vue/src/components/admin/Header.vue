@@ -3,8 +3,7 @@
     <a href="/index">
       <img src="../../assets/img/icon/icon2.png" alt="" width="55px" style="float: left;margin-top: -5px;">
     </a>
-    <span style="font-size: 32px;font-weight: bold;position:absolute;left: 100px">白  卷</span>
-    <a href="/register" style="color: #222;float: right;padding: 20px;">注册</a>
+    <span style="font-size: 32px;font-weight: bold;position:absolute;left: 100px"><a href="/index">白  卷</a></span>
     <i class="el-icon-switch-button" v-on:click="logout" style="font-size: 40px;float: right"></i>
   </el-card>
 </template>
@@ -20,7 +19,7 @@
         this.$axios.get('/logout').then(resp => {
           if (resp && resp.data.code === 200) {
             _this.$store.commit('logout')
-            _this.$router.replace('/index')
+            _this.$router.replace('/login')
             // 清空路由，防止路由重复加载
             const newRouter = createRouter()
             _this.$router.matcher = newRouter.matcher

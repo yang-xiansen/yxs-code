@@ -1,11 +1,38 @@
-server:
-  port: 9090
 spring:
+  # mysql配置
   datasource:
     url: jdbc:mysql://yxs.yang-xiansen.top:3306/white_jotter?characterEncoding=UTF-8
     username: white_jotter
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+  #  jpa配置
   jpa:
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+
+  #redis配置
+  redis:
+    host: yxs.yang-xiansen.top
+    port: 6379
+  # Redis 数据库索引（默认为 0）
+    database: 1
+  # Redis 服务器连接密码（默认为空）
+    password: root123$!
+    lettuce:
+      pool:
+        max-active: 8 #连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 8   # 连接池中的最大空闲连接
+        min-idle: 0   # 连接池中的最小空闲连接
+    timeout: 2000      # 连接超时时间（毫秒）
+
+  # redis 只用作缓存，不作为 repository
+  data:
+    redis:
+      repositories:
+        enabled: false
+server:
+  port: 9090

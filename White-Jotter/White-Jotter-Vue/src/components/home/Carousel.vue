@@ -54,9 +54,10 @@
       return {
         items: [{
           id: 1,
-          title: 'How2J.cn - Java 全栈学习网站',
-          img: '../../../static/img/carousel/how2j.png',
-          link: 'http://how2j.cn?p=50613'},
+          title: '美女',
+          img: '../../../static/img/carousel/meinv.jpg',
+          link: 'https://gitee.com/yangxianshen/yxs-code/tree/master/White-Jotter'
+        },
         {
           id: 2,
           title: 'Vue.js - 渐进式 JavaScript 框架',
