@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.11.RELEASE</version>
+        <version>2.1.16.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -19,6 +19,7 @@
     <modules>
         <module>spring-boot-websocket</module>
         <module>spring-boot-websocket-stomp</module>
+        <module>01.spring-boot-base-config</module>
     </modules>
 
 
