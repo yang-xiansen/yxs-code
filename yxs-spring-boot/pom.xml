@@ -21,6 +21,7 @@
         <module>spring-boot-websocket-stomp</module>
         <module>01.spring-boot-base-config</module>
         <module>02.spring-boot-mybatis</module>
+        <module>03.spring-boot-jdbc-template</module>
     </modules>
 
 
