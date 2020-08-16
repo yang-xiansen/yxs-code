@@ -20,6 +20,7 @@
         <module>spring-boot-websocket</module>
         <module>spring-boot-websocket-stomp</module>
         <module>01.spring-boot-base-config</module>
+        <module>02.spring-boot-mybatis</module>
     </modules>
 
 
@@ -101,7 +102,16 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <!--        不是java文件时 配置资源扫描-->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory><!--所在的目录-->
+                <includes><!--扫描目录下的.xml文件-->
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
-
 
 </project>
