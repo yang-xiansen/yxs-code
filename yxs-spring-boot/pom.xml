@@ -22,6 +22,13 @@
         <module>01.spring-boot-base-config</module>
         <module>02.spring-boot-mybatis</module>
         <module>03.spring-boot-jdbc-template</module>
+        <module>04.spring-boot-mybatis-multi-datasource</module>
+        <module>05.spring-boot-jdbcTemplate-multi-datasource</module>
+        <module>06.spring-boot-aop-log</module>
+        <module>07.spring-boot-thymeleaf</module>
+        <module>08.spring-boot-redis-cache</module>
+        <module>09.spring-boot-ehcache-cache</module>
+        <module>10.spring-boot-shiro-authentication</module>
     </modules>
 
 
