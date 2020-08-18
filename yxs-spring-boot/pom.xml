@@ -28,7 +28,7 @@
         <module>07.spring-boot-thymeleaf</module>
         <module>08.spring-boot-redis-cache</module>
         <module>09.spring-boot-ehcache-cache</module>
-        <module>10.spring-boot-shiro-authentication</module>
+        <module>10.spring-boot-jackson</module>
     </modules>
 
 
