@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /admin-server
+
+spring:
+  application:
+    name: admin-server
+
+
+#邮箱配置
+  mail:
+    host: smtp.163.com
+    username: xxxx@163.com
+    password: smtp授权码
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+#邮箱发送
+  boot:
+    admin:
+      notify:
+        mail:
+          from: xxxx@163.com
+          to: xxxx@qq.com
+
