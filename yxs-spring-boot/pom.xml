@@ -29,6 +29,10 @@
         <module>08.spring-boot-redis-cache</module>
         <module>09.spring-boot-ehcache-cache</module>
         <module>10.spring-boot-jackson</module>
+        <module>12.spring-boot-swagger2</module>
+        <module>13.spring-boot-actuator</module>
+        <module>14.spring-boot-email</module>
+        <module>15.spring-boot-admin</module>
     </modules>
 
 
