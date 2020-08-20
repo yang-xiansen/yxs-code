@@ -29,6 +29,7 @@
         <module>08.spring-boot-redis-cache</module>
         <module>09.spring-boot-ehcache-cache</module>
         <module>10.spring-boot-jackson</module>
+        <module>11.spring-boot-test</module>
     </modules>
 
 
