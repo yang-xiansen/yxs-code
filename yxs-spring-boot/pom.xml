@@ -30,6 +30,14 @@
         <module>09.spring-boot-ehcache-cache</module>
         <module>10.spring-boot-jackson</module>
         <module>11.spring-boot-test</module>
+        <module>12.spring-boot-swagger2</module>
+        <module>13.spring-boot-actuator</module>
+        <module>14.spring-boot-email</module>
+        <module>15.spring-boot-admin</module>
+        <module>16.spring-boot-devtools</module>
+        <module>17.spring-boot-logback</module>
+        <module>18.spring-boot-war</module>
+        <module>19.spring-boot-linux</module>
     </modules>
 
 

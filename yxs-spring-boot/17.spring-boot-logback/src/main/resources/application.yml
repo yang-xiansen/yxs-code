@@ -1,0 +1,6 @@
+yxs:
+  env: dev
+
+#配置日志地址
+logging:
+  config: classpath:log/logback-${yxs.env}.xml
