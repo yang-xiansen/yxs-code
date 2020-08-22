@@ -38,6 +38,7 @@
         <module>17.spring-boot-logback</module>
         <module>18.spring-boot-war</module>
         <module>19.spring-boot-linux</module>
+        <module>20.spring-boot-xss</module>
     </modules>
 
 
