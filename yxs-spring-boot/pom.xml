@@ -40,6 +40,7 @@
         <module>19.spring-boot-linux</module>
         <module>20.spring-boot-xss</module>
         <module>21.spring-boot-exception</module>
+        <module>22.Spring-Boot-Filter-Interceptor</module>
     </modules>
 
 
