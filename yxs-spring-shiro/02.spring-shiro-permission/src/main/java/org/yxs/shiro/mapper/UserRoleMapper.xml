@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yxs.shiro.mapper.UserRoleMapper">
+
+<resultMap type="org.yxs.shiro.entity.Role" id="role">
+   <id column="id" property="id" />
+   <id column="name" property="name" />
+   <id column="remark" property="description" />
+</resultMap>
+
+<select id="findByUserName" resultMap="role">
+	select r.id,r.name,r.remark from role r
+	left join user_role ur on(r.id = ur.r_id)
+	left join user u on(u.id = ur.u_id)
+	where u.username = #{userName}
+</select>
+</mapper>
