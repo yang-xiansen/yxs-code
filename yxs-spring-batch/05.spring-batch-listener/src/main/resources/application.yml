@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://yxs.yang-xiansen.top:3306/yxs
+    username: root
+    password: 123456

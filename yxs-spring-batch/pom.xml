@@ -21,6 +21,9 @@
         <module>02.spring-batch-itemreader</module>
         <module>03.spring-batch-itemwriter</module>
         <module>04.spring-batch-itemprocessor</module>
+        <module>05.spring-batch-listener</module>
+        <module>06.spring-batch-exception</module>
+        <module>07.spring-batch-launcher</module>
     </modules>
 
 
