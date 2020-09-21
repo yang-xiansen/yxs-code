@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://yxs.yang-xiansen.top:3306/yxs
+    username: root
+    password: 123456
+
+  batch:
+    job:
+     #关闭项目启动时自动运行任务的机制
+      enabled: false
+
+
