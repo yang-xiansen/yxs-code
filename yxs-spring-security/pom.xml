@@ -19,6 +19,10 @@
     <modules>
         <module>01.spring-security-start</module>
         <module>02.spring-security-custom-auth</module>
+        <module>03.spring-security-validate-code</module>
+        <module>04.spring-security-rememberMe</module>
+        <module>05.spring-security-sms-code</module>
+        <module>06.spring-security-manager-session</module>
     </modules>
 
 
