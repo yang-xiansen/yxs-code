@@ -25,6 +25,7 @@
         <module>06.spring-security-manager-session</module>
         <module>07.spring-security-logout</module>
         <module>08.spring-security-permission</module>
+        <module>09.spring-security-oauth2-start</module>
     </modules>
 
 
