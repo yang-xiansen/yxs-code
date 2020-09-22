@@ -1,0 +1,16 @@
+security:
+  basic:
+    enabled: true
+
+spring:
+  thymeleaf:
+    cache: true
+    check-template: true
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: HTML
+    prefix: classpath:/resources/
+    suffix: .html
