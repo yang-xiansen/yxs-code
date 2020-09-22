@@ -23,6 +23,8 @@
         <module>04.spring-security-rememberMe</module>
         <module>05.spring-security-sms-code</module>
         <module>06.spring-security-manager-session</module>
+        <module>07.spring-security-logout</module>
+        <module>08.spring-security-permission</module>
     </modules>
 
 
