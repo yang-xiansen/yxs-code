@@ -26,6 +26,10 @@
         <module>07.spring-security-logout</module>
         <module>08.spring-security-permission</module>
         <module>09.spring-security-oauth2-start</module>
+        <module>10.spring-security-oauth2-customize</module>
+        <module>11.spring-security-oauth2-customize1</module>
+        <module>12.spring-security-oauth2-jwt</module>
+        <module>13.spring-security-oauth2-sso</module>
     </modules>
 
 
@@ -114,8 +118,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <!--        不是java文件时 配置资源扫描-->
         <resources>
+            <!--            配置扫描-->
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <!--        不是java文件时 配置资源扫描-->
             <resource>
                 <directory>src/main/java</directory><!--所在的目录-->
                 <includes><!--扫描目录下的.xml文件-->

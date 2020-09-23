@@ -1,0 +1,9 @@
+server:
+  port: 8080
+security:
+  oauth2:
+    client:
+      client-id: test
+      client-secret: test
+      # 回调地址
+      registered-redirect-uri: https://www.baidu.com
