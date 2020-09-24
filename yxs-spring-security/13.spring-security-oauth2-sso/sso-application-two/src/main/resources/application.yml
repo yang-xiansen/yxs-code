@@ -1,0 +1,14 @@
+security:
+  oauth2:
+    client:
+      client-id: test2   # 授权客户端id
+      client-secret: test2  # 授权客户端密钥
+      user-authorization-uri: http://127.0.0.1:8080/server/oauth/authorize  #认证服务器授权地址
+      access-token-uri: http://127.0.0.1:8080/server/oauth/token  #认证服务器认证地址
+    resource:
+      jwt:
+        key-uri: http://127.0.0.1:8080/server/oauth/token_key  #认证服务器token地址
+server:
+  port: 9091
+  servlet:
+    context-path: /app2
