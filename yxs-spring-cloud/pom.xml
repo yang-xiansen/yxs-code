@@ -18,6 +18,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>01.spring-cloud-eureka</module>
+        <module>02.spring-cloud-ribbon-loadBalance</module>
     </modules>
 
     <properties>
