@@ -1,0 +1,23 @@
+# config-client 链接 config-sever集群  从注册中心获取配置中心地址的配置并去除了配置中心uri的配置
+server:
+  port: 9003
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      profile: dev #启用环境名称
+      label: dev #分支名称
+      name: config #配置文件名称
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
