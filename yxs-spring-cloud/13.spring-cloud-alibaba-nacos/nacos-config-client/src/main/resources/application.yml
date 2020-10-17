@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev
+
+#nacos配置文件格式：${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#如：nacos-config-client-dev.yaml
