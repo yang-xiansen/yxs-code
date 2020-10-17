@@ -3,12 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.16.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>2.1.16.RELEASE</version>-->
+<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+<!--    </parent>-->
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,6 +25,16 @@
         <module>05.spring-cloud-openfeign</module>
         <module>06.spring-cloud-zuul</module>
         <module>07.spring-cloud-config</module>
+        <module>08.spring-cloud-bus</module>
+        <module>09.spring-cloud-sleuth</module>
+        <module>10.spring-cloud-consul</module>
+        <module>11.spring-cloud-gateway</module>
+        <module>12.spring-boot-admin</module>
+        <module>13.spring-cloud-alibaba-nacos</module>
+        <module>14.spring-cloud-alibaba-sentinel</module>
+        <module>15.spring-cloud-alibaba-seata</module>
+        <module>16.spring-cloud-gateway-oauth2</module>
+        <module>17.spring-cloud-swagger</module>
     </modules>
 
     <properties>
