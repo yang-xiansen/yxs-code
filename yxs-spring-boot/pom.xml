@@ -41,6 +41,8 @@
         <module>20.spring-boot-xss</module>
         <module>21.spring-boot-exception</module>
         <module>22.Spring-Boot-Filter-Interceptor</module>
+        <module>23.spring-boot-mapper-pageHelper</module>
+        <module>37.spring-boot-ali-pay</module>
     </modules>
 
 
