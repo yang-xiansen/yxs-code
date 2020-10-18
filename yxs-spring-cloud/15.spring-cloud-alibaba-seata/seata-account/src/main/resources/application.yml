@@ -1,0 +1,35 @@
+server:
+  port: 8182
+spring:
+  application:
+    name: seata-account
+  cloud:
+    alibaba:
+      seata:
+        enableAutoDataSourceProxy: false
+        tx-service-group: fsp_tx_group
+        registry:
+          file:
+            #因为seata版本驼峰参数映射有问题导致，seata的zk配置参数设置不上导致异常
+            name: registry.conf
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/seat-account
+    username: root
+
+feign:
+  hystrix:
+    enabled: true
+
+logging:
+  level:
+    io:
+      seata: info
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+#seata:
+#  enabled: false
