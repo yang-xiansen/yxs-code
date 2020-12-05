@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>design-00</module>
+        <module>design-01</module>
     </modules>
 
     <dependencies>
