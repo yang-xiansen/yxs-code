@@ -11,6 +11,10 @@
     <modules>
         <module>netty-00</module>
         <module>00-io-basic</module>
+        <module>netty-01</module>
+        <module>netty-02</module>
+        <module>netty-03</module>
+        <module>netty-04</module>
     </modules>
 
 
