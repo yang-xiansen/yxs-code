@@ -15,6 +15,7 @@
         <module>netty-02</module>
         <module>netty-03</module>
         <module>netty-04</module>
+        <module>netty-05</module>
     </modules>
 
 
