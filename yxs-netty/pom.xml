@@ -24,7 +24,14 @@
         <module>netty-11</module>
         <module>netty-12</module>
         <module>netty-13</module>
+        <module>netty-14</module>
         <module>netty-15</module>
+        <module>netty-16</module>
+        <module>netty-17</module>
+        <module>netty-19</module>
+        <module>netty-20</module>
+        <module>netty-22</module>
+        <module>netty-23</module>
     </modules>
 
 
