@@ -1,0 +1,16 @@
+server:
+  port:8080
+
+netty:
+  host: 127.0.0.1
+  port: 9999
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+
+
+#spring.mvc.view.prefix=classpath:/templates/
+#spring.mvc.view.suffix=.html
